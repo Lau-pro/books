@@ -30,9 +30,7 @@
                                     </x-primary-button>
                                 </div>
                             </form>
-                        </div>
-                    
-                        <!-- Clear Button -->
+                             <!-- Clear Button -->
                         @if(request('author') || request('genre'))
                         <div class="my-2">
                             <a href="{{ route('book.view') }}">
@@ -42,6 +40,9 @@
                             </a>
                         </div>
                         @endif
+                        </div>
+                    
+                       
                     
                         <!-- Genre Dropdown Filter -->
                         <div class="w-full md:w-1/2 lg:w-1/3 sm:flex sm:items-center my-2 md:">

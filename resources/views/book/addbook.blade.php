@@ -10,8 +10,8 @@
                 <div class="max-w-1/2 py-8 px-10 flex justify-center">
                     <form class="w-full max-w-lg" method="POST" action="{{ route('book.store') }}">
                         @csrf
-                        <div class="flex flex-wrap -mx-3 mb-6">
-                          <div class="w-full px-3 mb-6 md:mb-0">
+                        <div class="flex flex-wrap -mx-3 mb-6 ">
+                          <div class="w-full px-3 mb-6 sm:mb-3 md:mb-0">
                             <x-input-label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name" >
                               Book Title
                             </x-input-label>
@@ -38,7 +38,7 @@
                           </div>
                         </div>
                         <div class="flex flex-wrap -mx-3 mb-6">
-                          <div class="w-full md:w-1/3 px-3">
+                          <div class="w-full md:w-1/3 px-3 mb-3">
                             <x-input-label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                               ISBN
                             </x-input-label>
