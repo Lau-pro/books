@@ -67,7 +67,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 
-## aravel php framewrok
+## Laravel php framewrok
     -edit the env file
 
 ## Database Configuration
