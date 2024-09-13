@@ -17,11 +17,23 @@ class BookController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $headers = ['isbn', 'author', 'title', 'genre', 'published date', 'action'];
-        $books = Book::where('user_id', '=', Auth::user()->id)->orderBy('created_at')->paginate(5);
-        return view('book.viewbooks', ['books' => $books], ['header' => $headers]);
+
+        $headers = ['isbn', 'title', 'author', 'genre', 'published date', 'action'];
+        $books = book::query()
+            ->when($request->author, fn($q, $author) => $q->where('author', 'like', "%{$author}%"))
+            ->when($request->genre, fn($q, $genre) => $q->where('genre', $genre))
+            ->where('user_id', Auth::id())
+            ->orderBy('created_at')
+            ->paginate(7)
+            ->withQueryString();
+
+        return view('book.viewbooks', [
+            'books' => $books,
+            'header' => $headers,
+            'genre' => $this->genre
+        ]);
     }
 
     /**
